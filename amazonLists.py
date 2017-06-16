@@ -31,7 +31,7 @@ def getWishlist(wishlist_to_pull = 'https://www.amazon.com/gp/registry/wishlist/
   
   #Get the timestamp for right now in ISO format.  ex: 2017-06-13T19:47:23.734216
   wishlist['date_retrieved'] = str(datetime.datetime.now().isoformat())
-  wishlist['description'] = soup.find('h3', id='profile-list-name').text
+  wishlist['description'] = soup.find('span', id='profile-list-name').text
   wishlist['url'] = wishlist_to_pull
   
   #Iterate through all the items and pull info for each.  
